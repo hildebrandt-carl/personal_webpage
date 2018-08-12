@@ -1142,7 +1142,7 @@ ul {
 	width: 100%;
 	top: 0;
 	left: 0;
-	background-image: url(./Graduation.jpg);
+	background-image: url(./robotics.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-attachment: fixed;
@@ -1194,3 +1194,75 @@ ul {
 .grad-circle .circle-content h2 {
 	color: #fff;
 }
+
+.headertekst
+{
+	text-align: center;
+}
+
+.centerthings {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+  }
+
+.littlespaceplease{
+	margin: 10px;
+	padding: 10px;
+}
+
+.box {       
+	left: 15%;
+	top: 30%;
+	position: absolute;
+}
+
+.spacebelow
+{
+	margin-bottom: 100px ;
+}
+
+
+
+  
+.jumbotron.vertical-center 
+{
+	margin-bottom: 0; /* Remove the default bottom margin of .jumbotron */
+}
+
+.vertical-center 
+{
+	min-height: 100%;
+	min-height: 100vh; 
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex; 
+
+		-webkit-box-align : center;
+	-webkit-align-items : center;
+			-moz-box-align : center;
+			-ms-flex-align : center;
+			align-items : center;
+
+	width: 100%;
+			-webkit-box-pack : center;
+				-moz-box-pack : center;
+				-ms-flex-pack : center;
+	-webkit-justify-content : center;
+			justify-content : center;
+}
+
+
+
+.centermybigclock
+{
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+
+
+.boxthingthing { height: 50px; width: 100%; margin-top: 10px; }
+#first { margin-top: 20px; }

@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+	<head>
+		<link rel="stylesheet" href="./bootstrap.min.css">
+		<link rel="stylesheet" href="FlipClock-master/compiled/flipclock.css">
+		<link rel="stylesheet" href="./style.css">
+		<link rel="stylesheet" href="./main.css">
+		
+
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+		<script src="FlipClock-master/compiled/flipclock.js"></script>	
+	</head>
+	<body>
+
+		<nav class="nav nav-pills navbar-inverse bg-inverse">
+			<a class="navbar-brand" href="#">
+				<img src="./IO_Inv.png" width="20" height="20" alt="">
+			</a>
+			<li role="presentation"><a href="./work.html">Work</a></li>
+			<li role="presentation"><a href="./play.html">Play</a></li>
+			<li class="active" role="presentation"><a href="./riles.html">Riles</a></li>
+		</nav>
+
+		<div class="container-fluid">
+			<div class="row">
+				
+				<div class="col-sm-6 ">
+					
+					
+				</div>
+			</div>
+		</div>
+		
+		<script type="text/javascript">
+			var clock;
+
+			$(document).ready(function() {
+
+				// Grab the current date
+				var currentDate = new Date();
+
+				// Set some date in the past. In this case, it's always been since Jan 1
+				var futureTime  = new Date("October 10, 2018 12:00:00");
+
+				// Calculate the difference in seconds between the future and current date
+				var diff = futureTime.getTime() / 1000 - currentDate.getTime() / 1000;
+
+				// Instantiate a coutdown FlipClock
+				clock = $('.clock').FlipClock(diff, {
+					clockFace: 'DailyCounter',
+					countdown: true
+				});
+			});
+		</script>
+
+		<div class="jumbotron vertical-center">
+
+			<div class="container">
+				<!-- I am sorry for doing this its late and I just want it to look nice :( -->
+				<h2 class="headertekst">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;You can have it all. Just not all at once.&quot;</h2>
+				<p class="spacebelow headertekst">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Oprah Winfrey</p>
+				<div class="boxthingthing" id="first"></div>
+				<div class="clock centermybigclock" style="margin:2em;"></div>
+			</div>
+		</div>
+
+		<script src="./bootstrap.min.js"></script>
+		
+	</body>
+</html>

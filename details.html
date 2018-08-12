@@ -1,0 +1,127 @@
+<!doctype html>
+
+<head>
+<script src="js/jquery-2.1.4.min.js"></script>
+<script src="js/handlebars-v3.0.3.js"></script>
+
+<script src="bootstrap.min.js"></script>
+
+<script src="AnimalsData.js"></script>
+
+
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/gallery.css" rel="stylesheet">
+
+<link rel="stylesheet" href="./style.css">
+<link rel="stylesheet" href="./main.css">
+
+</head>
+
+<body>
+
+    <div id="container">
+        <div id="content_left">
+            <!-- animal list is rendered here -->
+        </div>
+
+        <div id="content_right">
+            <!-- animal detail is rendered here -->
+        </div>
+    </div>
+
+    <!-- this is our template put your code in here...-->
+    <script id="category-template" type="text/x-handlebars-template">
+
+        <nav class="nav nav-pills navbar-inverse bg-inverse">
+                <a class="navbar-brand active" href="./index.html">
+                    <img src="./IO_Inv.png" width="20" height="20" alt="">
+                </a>
+                <li role="presentation" class="active"><a href="#">Work</a></li>
+                <li role="presentation"><a href="./play.html">Play</a></li>
+            </nav>
+    </script>
+
+
+    <script id="animal-detail-template" type="text/x-handlebars-template">
+        <h2 class="headertekst littlespaceplease">{{name}}</h2>
+        <div class="col-md-6">
+            <img  style="width:80%" class="centerthings" src="{{image1}}"/>
+        </div>
+        <div class="col-md-6">
+            <img  style="width:80%" class="centerthings" src="{{image2}}"/>
+        </div>
+        <div class="col-md-12">
+            <p class="littlespaceplease">{{description}}</p>
+        </div>
+    </script>
+
+  <!-- javascript code to fill the template -->
+  <script type="text/javascript">
+
+    // grab our template code from the DOM
+    var source   = $("#category-template").html();
+
+    // compile the template so we can use it
+    var template = Handlebars.compile(source);
+
+    // generate HTML from the data
+    var html    = template(animals_data);
+
+    // add the HTML to the content div
+    $('#content_left').html(html);
+
+    // this event listener is triggered when the user clicks on an animal name
+    $('.js-animal-name').on('click', function(e){
+        var animal_name = $(e.target).data('id');// pull the data-id attribute, which contains the name
+        console.log('rendering detail page for '+animal_name);
+        for (var i=0;i<animals_data.animals.length;i++){// look for the animal in the array of animals
+            var an_animal = animals_data.animals[i];
+            if (an_animal.name == animal_name){// found it!
+                break;
+            }
+        }
+
+        var source  = $("#animal-detail-template").html();
+
+        var template = Handlebars.compile(source);
+
+        var html    = template(an_animal);
+
+        $('#content_right').html(html);
+    });
+  </script>
+
+  <script type="text/javascript">
+        console.log('hello')
+        passedVar = parent.document.URL.substring(parent.document.URL.indexOf('?'), parent.document.URL.length);
+        if (passedVar.includes('selectedItem')) 
+        {
+            selectedItem = passedVar.substring(passedVar.indexOf('=')+1,passedVar.length)
+            if (selectedItem.includes('#'))
+            {
+                selectedItem = selectedItem.substring(0,selectedItem.length-1)
+            }
+        } 
+        else
+        {
+            window.location = "./work.html";
+        }
+
+        console.log('rendering detail page for '+selectedItem);
+        for (var i=0;i<animals_data.animals.length;i++){// look for the animal in the array of animals
+            var an_animal = animals_data.animals[i];
+            if (an_animal.item == selectedItem){// found it!
+                break;
+            }
+        }
+
+        var source  = $("#animal-detail-template").html();
+
+        var template = Handlebars.compile(source);
+
+        var html    = template(an_animal);
+
+        $('#content_right').html(html);
+  </script>
+
+</body>
