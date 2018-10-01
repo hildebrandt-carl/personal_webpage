@@ -6,7 +6,7 @@
 
 <script src="bootstrap.min.js"></script>
 
-<script src="AnimalsData.js"></script>
+<script src="extradetails.js"></script>
 
 
 <link href="css/bootstrap.css" rel="stylesheet">
@@ -29,15 +29,15 @@
         </div>
     </div>
 
-    <!-- this is our template put your code in here...-->
+
     <script id="category-template" type="text/x-handlebars-template">
 
         <nav class="nav nav-pills navbar-inverse bg-inverse">
                 <a class="navbar-brand active" href="./index.html">
                     <img src="./IO_Inv.png" width="20" height="20" alt="">
                 </a>
-                <li role="presentation" class="active"><a href="#">Work</a></li>
-                <li role="presentation"><a href="./play.html">Play</a></li>
+                <li role="presentation"><a href="./work.html">Work</a></li>
+                <li role="presentation"><a href="./life.html">Life</a></li>
             </nav>
     </script>
 
@@ -46,13 +46,20 @@
         <h2 class="headertekst littlespaceplease">{{name}}</h2>
         <div class="col-md-6">
             <img  style="width:80%" class="centerthings" src="{{image1}}"/>
+            <p class="xf littlespaceplease headertekst">This is a test</p>
         </div>
         <div class="col-md-6">
             <img  style="width:80%" class="centerthings" src="{{image2}}"/>
+            <p class="xf littlespaceplease headertekst">This is a test</p>
         </div>
         <div class="col-md-12">
             <p class="littlespaceplease">{{description}}</p>
         </div>
+        &nbsp; &nbsp; &nbsp; &nbsp;
+        <div>
+            <h2 class="headertekst littlespaceplease">{{name}} in action</h2>
+        </div>
+        <div class="video-container"><iframe src={{youtubelink}} frameborder="0" allowfullscreen="allowfullscreen"></iframe></div>
     </script>
 
   <!-- javascript code to fill the template -->

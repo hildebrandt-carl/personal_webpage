@@ -1266,3 +1266,23 @@ ul {
 
 .boxthingthing { height: 50px; width: 100%; margin-top: 10px; }
 #first { margin-top: 20px; }
+
+
+
+
+
+.video-container {
+	position: relative;
+	padding-bottom: 56.25%;
+	padding-top: 30px; height: 0; overflow: hidden;
+	}
+	
+	.video-container iframe,
+	.video-container object,
+	.video-container embed {
+	position: absolute;
+	top: 10%;
+	left: 25%;
+	width: 50%;
+	height: 50%;
+	}
