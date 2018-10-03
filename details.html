@@ -72,7 +72,7 @@
     var template = Handlebars.compile(source);
 
     // generate HTML from the data
-    var html    = template(animals_data);
+    var html    = template(work_data);
 
     // add the HTML to the content div
     $('#content_left').html(html);
@@ -81,9 +81,9 @@
     $('.js-animal-name').on('click', function(e){
         var animal_name = $(e.target).data('id');// pull the data-id attribute, which contains the name
         console.log('rendering detail page for '+animal_name);
-        for (var i=0;i<animals_data.animals.length;i++){// look for the animal in the array of animals
-            var an_animal = animals_data.animals[i];
-            if (an_animal.name == animal_name){// found it!
+        for (var i=0;i<work_data.project.length;i++){// look for the animal in the array of animals
+            var a_project = work_data.project[i];
+            if (a_project.name == project_name){// found it!
                 break;
             }
         }
@@ -92,7 +92,7 @@
 
         var template = Handlebars.compile(source);
 
-        var html    = template(an_animal);
+        var html    = template(a_project);
 
         $('#content_right').html(html);
     });
@@ -115,9 +115,9 @@
         }
 
         console.log('rendering detail page for '+selectedItem);
-        for (var i=0;i<animals_data.animals.length;i++){// look for the animal in the array of animals
-            var an_animal = animals_data.animals[i];
-            if (an_animal.item == selectedItem){// found it!
+        for (var i=0;i<work_data.project.length;i++){// look for the animal in the array of animals
+            var a_project = work_data.project[i];
+            if (a_project.item == selectedItem){// found it!
                 break;
             }
         }
@@ -126,7 +126,7 @@
 
         var template = Handlebars.compile(source);
 
-        var html    = template(an_animal);
+        var html    = template(a_project);
 
         $('#content_right').html(html);
   </script>
